@@ -1,0 +1,445 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - Lost and Found</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo-section">
+
+            <div class="logo-icon">
+                🔎
+            </div>
+
+            <div>
+                <h1>Lost and Found</h1>
+                <p>School Lost and Found Management System</p>
+            </div><nav class="sidebar-nav">
+
+    <a href="index.html" class="nav-link">
+        🏠 Home
+    </a>
+
+    <a href="lost-reports.html" class="nav-link">
+        📢 Lost Reports
+    </a>
+
+    <a href="found-reports.html" class="nav-link">
+        🔍 Found Reports
+    </a>
+
+    <a href="claim-verification.html" class="nav-link">
+        ✅ Claim Verification
+    </a>
+
+    <a href="contact.html" class="nav-link">
+        📞 Contact Us
+    </a>
+
+</nav>
+
+
+        </div>
+
+        <div class="school-name">
+            🏫 Your School Name
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="index.html">
+            🏠 <span>Home</span>
+        </a>
+
+        <a href="lost-reports.html">
+            📄 <span>Lost Reports</span>
+        </a>
+
+        <a href="found-reports.html">
+            📦 <span>Found Reports</span>
+        </a>
+
+        <a href="claim-verification.html">
+            🛡️ <span>Claim Verification</span>
+        </a>
+
+        <a href="contact.html" class="active">
+            ✉️ <span>Contact</span>
+        </a>
+
+        <div class="sidebar-footer">
+            Together for a safer<br>
+            and more organized school.
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- PAGE TITLE -->
+        <section class="page-title">
+
+            <div class="page-icon">
+                ✉️
+            </div>
+
+            <div>
+                <h2>Contact Us</h2>
+
+                <p>
+                    Contact the school Lost and Found office for questions and assistance.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT INFORMATION -->
+        <section class="contact-grid">
+
+            <!-- INFORMATION CARD -->
+            <div class="card contact-info-card">
+
+                <div class="card-header">
+                    <span>📞</span>
+                    <h3>Contact Information</h3>
+                </div>
+
+
+                <div class="contact-info">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            🏫
+                        </div>
+
+                        <div>
+                            <h4>School Lost and Found Office</h4>
+                            <p>Your School Name</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+                            <h4>Office Location</h4>
+                            <p>School Administration Building</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📞
+                        </div>
+
+                        <div>
+                            <h4>Contact Number</h4>
+                            <p>09XX-XXX-XXXX</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ✉️
+                        </div>
+
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>lostandfound@yourschool.edu</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            🕐
+                        </div>
+
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday - Friday</p>
+                            <p>8:00 AM - 5:00 PM</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE FORM -->
+            <div class="card">
+
+                <div class="card-header">
+                    <span>💬</span>
+                    <h3>Send Us a Message</h3>
+                </div>
+
+
+                <form id="contactForm" class="contact-form">
+
+                    <div class="form-group">
+
+                        <label for="contactName">
+                            Full Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactEmail">
+                            Email Address <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            placeholder="example@email.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactPhone">
+                            Contact Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="contactPhone"
+                            placeholder="09XX-XXX-XXXX"
+                            pattern="[0-9+\-\s]{10,15}"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactSubject">
+                            Subject <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactSubject"
+                            placeholder="Enter message subject"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactMessage">
+                            Message <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="contactMessage"
+                            rows="6"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        ✉️ Send Message
+                    </button>
+
+                </form>
+
+
+                <!-- SUCCESS -->
+                <div
+                    id="contactSuccess"
+                    class="success-message"
+                >
+                    ✅ Your message has been submitted successfully!
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HELP CARD -->
+        <section class="card help-card">
+
+            <div class="card-header">
+                <span>❓</span>
+                <h3>Need Help?</h3>
+            </div>
+
+            <div class="help-content">
+
+                <p>
+                    For urgent concerns about a lost or found item,
+                    please visit the school's Lost and Found Office
+                    during office hours.
+                </p>
+
+                <div class="help-buttons">
+
+                    <a
+                        href="lost-reports.html"
+                        class="help-btn"
+                    >
+                        📄 Report Lost Item
+                    </a>
+
+                    <a
+                        href="found-reports.html"
+                        class="help-btn"
+                    >
+                        📦 Report Found Item
+                    </a>
+
+                    <a
+                        href="claim-verification.html"
+                        class="help-btn"
+                    >
+                        🛡️ Verify a Claim
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                    .getElementById("contactName")
+                    .value.trim();
+
+                const email =
+                    document
+                    .getElementById("contactEmail")
+                    .value.trim();
+
+                const subject =
+                    document
+                    .getElementById("contactSubject")
+                    .value.trim();
+
+                const message =
+                    document
+                    .getElementById("contactMessage")
+                    .value.trim();
+
+
+                if (
+                    name === "" ||
+                    email === "" ||
+                    subject === "" ||
+                    message === ""
+                ) {
+
+                    alert(
+                        "Please complete all required fields."
+                    );
+
+                    return;
+                }
+
+
+                document
+                    .getElementById("contactSuccess")
+                    .style.display = "block";
+
+
+                alert(
+                    "Your message has been submitted successfully!"
+                );
+
+
+                document
+                    .getElementById("contactForm")
+                    .reset();
+
+
+                setTimeout(function() {
+
+                    document
+                        .getElementById("contactSuccess")
+                        .style.display = "none";
+
+                }, 3000);
+
+            });
+
+    </script>
+
+</body>
+
+</html>
+```

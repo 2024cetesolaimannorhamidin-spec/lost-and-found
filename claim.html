@@ -1,0 +1,639 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Claim Verification - Lost and Found</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo-section">
+            <div class="logo-icon">🔎</div>
+
+            <div>
+                <h1>Lost and Found</h1>
+                <p>School Lost and Found Management System</p>
+            </div>
+            <nav class="sidebar-nav">
+
+    <a href="index.html" class="nav-link">
+        🏠 Home
+    </a>
+
+    <a href="lost-reports.html" class="nav-link">
+        📢 Lost Reports
+    </a>
+
+    <a href="found-reports.html" class="nav-link">
+        🔍 Found Reports
+    </a>
+
+    <a href="claim-verification.html" class="nav-link">
+        ✅ Claim Verification
+    </a>
+
+    <a href="contact.html" class="nav-link">
+        📞 Contact Us
+    </a>
+
+</nav>
+        </div>
+
+        <div class="school-name">
+            🏫 Your School Name
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="index.html">
+            🏠 <span>Home</span>
+        </a>
+
+        <a href="lost-reports.html">
+            📄 <span>Lost Reports</span>
+        </a>
+
+        <a href="found-reports.html">
+            📦 <span>Found Reports</span>
+        </a>
+
+        <a href="claim-verification.html" class="active">
+            🛡️ <span>Claim Verification</span>
+        </a>
+
+        <a href="#">
+            ✉️ <span>Contact</span>
+        </a>
+
+        <div class="sidebar-footer">
+            Together for a safer<br>
+            and more organized school.
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- PAGE TITLE -->
+        <section class="page-title">
+
+            <div class="page-icon">
+                🛡️
+            </div>
+
+            <div>
+                <h2>Claim Verification</h2>
+
+                <p>
+                    Verify claims and match students with their reported lost items.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- CLAIM FORM -->
+        <section class="card">
+
+            <div class="card-header">
+                <span>🔐</span>
+                <h3>Verify Item Claim</h3>
+            </div>
+
+
+            <form id="claimForm">
+
+                <div class="form-row">
+
+                    <!-- CLAIMANT NAME -->
+                    <div class="form-group">
+
+                        <label for="claimantName">
+                            Claimant Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="claimantName"
+                            placeholder="Enter student or staff name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- REPORT ID -->
+                    <div class="form-group">
+
+                        <label for="reportID">
+                            Lost Report ID <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="reportID"
+                            placeholder="e.g. LST-001"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- ITEM NAME -->
+                    <div class="form-group">
+
+                        <label for="claimItemName">
+                            Item Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="claimItemName"
+                            placeholder="e.g. Black Wallet"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <!-- PROOF -->
+                    <div class="form-group description-group">
+
+                        <label for="proofDetails">
+                            Proof of Ownership <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="proofDetails"
+                            rows="4"
+                            placeholder="Describe details that prove ownership, such as color, brand, contents, or identifying marks..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+                    <div class="submit-area">
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            🛡️ Submit for Verification
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+
+            <!-- SUCCESS MESSAGE -->
+            <div
+                id="claimSuccessMessage"
+                class="success-message"
+            >
+                ✅ Claim submitted successfully for verification!
+            </div>
+
+        </section>
+
+
+        <!-- CLAIM TABLE -->
+        <section class="card">
+
+            <!-- TABLE HEADER -->
+            <div class="table-header">
+
+                <div class="table-title">
+                    🛡️ Claim Requests
+                </div>
+
+                <input
+                    type="text"
+                    id="claimSearch"
+                    placeholder="🔍 Search claims..."
+                >
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Claim ID</th>
+                            <th>Claimant</th>
+                            <th>Report ID</th>
+                            <th>Item Name</th>
+                            <th>Proof Details</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="claimTableBody">
+
+                        <!-- CLAIM 1 -->
+                        <tr>
+
+                            <td>CLM-001</td>
+
+                            <td>Juan Dela Cruz</td>
+
+                            <td>LST-001</td>
+
+                            <td>Black Wallet</td>
+
+                            <td>
+                                Has student ID and unique sticker.
+                            </td>
+
+                            <td>
+                                <span class="claim-status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewClaim(this)"
+                                >
+                                    👁 View
+                                </button>
+
+                                <button
+                                    class="verify-btn"
+                                    onclick="verifyClaim(this)"
+                                >
+                                    ✓ Verify
+                                </button>
+
+                                <button
+                                    class="reject-btn"
+                                    onclick="rejectClaim(this)"
+                                >
+                                    ✕ Reject
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- CLAIM 2 -->
+                        <tr>
+
+                            <td>CLM-002</td>
+
+                            <td>Maria Santos</td>
+
+                            <td>LST-002</td>
+
+                            <td>Blue Water Bottle</td>
+
+                            <td>
+                                Has school logo and name sticker.
+                            </td>
+
+                            <td>
+                                <span class="claim-status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewClaim(this)"
+                                >
+                                    👁 View
+                                </button>
+
+                                <button
+                                    class="verify-btn"
+                                    onclick="verifyClaim(this)"
+                                >
+                                    ✓ Verify
+                                </button>
+
+                                <button
+                                    class="reject-btn"
+                                    onclick="rejectClaim(this)"
+                                >
+                                    ✕ Reject
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- CLAIM 3 -->
+                        <tr>
+
+                            <td>CLM-003</td>
+
+                            <td>Ali Hassan</td>
+
+                            <td>LST-003</td>
+
+                            <td>White Earphones</td>
+
+                            <td>
+                                Correct brand and matching case.
+                            </td>
+
+                            <td>
+                                <span class="claim-status verified">
+                                    Verified
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewClaim(this)"
+                                >
+                                    👁 View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <p class="record-count" id="claimRecordCount">
+                Showing 3 claim requests
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        /* =========================
+           SUBMIT CLAIM
+        ========================= */
+
+        document
+            .getElementById("claimForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const claimant =
+                    document.getElementById("claimantName")
+                        .value.trim();
+
+                const reportID =
+                    document.getElementById("reportID")
+                        .value.trim();
+
+                const itemName =
+                    document.getElementById("claimItemName")
+                        .value.trim();
+
+                const proof =
+                    document.getElementById("proofDetails")
+                        .value.trim();
+
+
+                if (
+                    claimant === "" ||
+                    reportID === "" ||
+                    itemName === "" ||
+                    proof === ""
+                ) {
+
+                    alert(
+                        "Please complete all required fields."
+                    );
+
+                    return;
+                }
+
+
+                document
+                    .getElementById("claimSuccessMessage")
+                    .style.display = "block";
+
+
+                alert(
+                    "Claim submitted successfully for verification!"
+                );
+
+
+                document
+                    .getElementById("claimForm")
+                    .reset();
+
+
+                setTimeout(function() {
+
+                    document
+                        .getElementById("claimSuccessMessage")
+                        .style.display = "none";
+
+                }, 3000);
+
+            });
+
+
+        /* =========================
+           SEARCH CLAIMS
+        ========================= */
+
+        document
+            .getElementById("claimSearch")
+            .addEventListener("keyup", function() {
+
+                const searchValue =
+                    this.value.toLowerCase();
+
+                const rows =
+                    document.querySelectorAll(
+                        "#claimTableBody tr"
+                    );
+
+
+                rows.forEach(function(row) {
+
+                    const rowText =
+                        row.textContent.toLowerCase();
+
+
+                    if (rowText.includes(searchValue)) {
+
+                        row.style.display = "";
+
+                    } else {
+
+                        row.style.display = "none";
+
+                    }
+
+                });
+
+            });
+
+
+        /* =========================
+           VIEW CLAIM
+        ========================= */
+
+        function viewClaim(button) {
+
+            const row =
+                button.closest("tr");
+
+            const cells =
+                row.querySelectorAll("td");
+
+
+            alert(
+                "CLAIM INFORMATION\n\n" +
+
+                "Claim ID: " +
+                cells[0].textContent + "\n" +
+
+                "Claimant: " +
+                cells[1].textContent + "\n" +
+
+                "Report ID: " +
+                cells[2].textContent + "\n" +
+
+                "Item Name: " +
+                cells[3].textContent + "\n" +
+
+                "Proof: " +
+                cells[4].textContent + "\n" +
+
+                "Status: " +
+                cells[5].textContent
+            );
+
+        }
+
+
+        /* =========================
+           VERIFY CLAIM
+        ========================= */
+
+        function verifyClaim(button) {
+
+            const row =
+                button.closest("tr");
+
+            const status =
+                row.querySelector(".claim-status");
+
+
+            if (
+                confirm(
+                    "Are you sure you want to verify this claim?"
+                )
+            ) {
+
+                status.textContent = "Verified";
+
+                status.className =
+                    "claim-status verified";
+
+
+                button.remove();
+
+
+                const rejectButton =
+                    row.querySelector(".reject-btn");
+
+                if (rejectButton) {
+                    rejectButton.remove();
+                }
+
+            }
+
+        }
+
+
+        /* =========================
+           REJECT CLAIM
+        ========================= */
+
+        function rejectClaim(button) {
+
+            const row =
+                button.closest("tr");
+
+            const status =
+                row.querySelector(".claim-status");
+
+
+            if (
+                confirm(
+                    "Are you sure you want to reject this claim?"
+                )
+            ) {
+
+                status.textContent = "Rejected";
+
+                status.className =
+                    "claim-status rejected";
+
+
+                const verifyButton =
+                    row.querySelector(".verify-btn");
+
+                if (verifyButton) {
+                    verifyButton.remove();
+                }
+
+                button.remove();
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
+```

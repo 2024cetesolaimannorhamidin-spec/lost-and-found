@@ -1,0 +1,426 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lost Item Reports - Lost and Found</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo-section">
+            <div class="logo-icon">🔎</div>
+
+            <div>
+                <h1>Lost and Found</h1>
+                <p>School Lost and Found Management System</p>
+            </div>
+            <nav class="sidebar-nav">
+
+    <a href="index.html" class="nav-link">
+        🏠 Home
+    </a>
+
+    <a href="lost-reports.html" class="nav-link">
+        📢 Lost Reports
+    </a>
+
+    <a href="found-reports.html" class="nav-link">
+        🔍 Found Reports
+    </a>
+
+    <a href="claim-verification.html" class="nav-link">
+        ✅ Claim Verification
+    </a>
+
+    <a href="contact.html" class="nav-link">
+        📞 Contact Us
+    </a>
+
+</nav>
+        </div>
+
+        <div class="school-name">
+            🏫 Your School Name
+        </div>
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="index.html">
+            🏠 <span>Home</span>
+        </a>
+
+        <a href="lost-reports.html" class="active">
+            📄 <span>Lost Reports</span>
+        </a>
+
+        <a href="found-reports.html">
+            📦 <span>Found Reports</span>
+        </a>
+
+        <a href="#">
+            🛡️ <span>Claim Verification</span>
+        </a>
+
+        <a href="#">
+            ✉️ <span>Contact</span>
+        </a>
+
+        <div class="sidebar-footer">
+            Together for a safer<br>
+            and more organized school.
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- PAGE TITLE -->
+        <section class="page-title">
+            <div class="page-icon">📄</div>
+
+            <div>
+                <h2>Lost Item Reports</h2>
+                <p>
+                    Report and manage items that have been lost by students and staff.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- REPORT FORM -->
+        <section class="card">
+
+            <div class="card-header">
+                <span>➕</span>
+                <h3>Report a Lost Item</h3>
+            </div>
+
+            <form id="lostItemForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="itemName">
+                            Item Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="itemName"
+                            name="itemName"
+                            placeholder="e.g. Wallet, Phone, Notebook"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="locationLost">
+                            Location Lost <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="locationLost"
+                            name="locationLost"
+                            placeholder="e.g. Classroom, Library, Canteen"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="dateLost">
+                            Date Lost <span>*</span>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dateLost"
+                            name="dateLost"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group description-group">
+                        <label for="description">
+                            Description <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="4"
+                            placeholder="Provide additional details about the lost item..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="submit-area">
+                        <button type="submit" class="submit-btn">
+                            📄 Submit Lost Report
+                        </button>
+                    </div>
+
+                </div>
+
+            </form>
+
+            <!-- SUCCESS MESSAGE -->
+            <div id="successMessage" class="success-message">
+                ✅ Lost item report submitted successfully!
+            </div>
+
+        </section>
+
+
+        <!-- LOST ITEMS TABLE -->
+        <section class="card">
+
+            <div class="table-header">
+
+                <div class="table-title">
+                    📄 Lost Items
+                </div>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 Search lost items..."
+                >
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Report ID</th>
+                            <th>Item Name</th>
+                            <th>Location Lost</th>
+                            <th>Date Lost</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="lostItemsTableBody">
+
+                        <tr>
+                            <td>LST-001</td>
+                            <td>Black Wallet</td>
+                            <td>Library</td>
+                            <td>2026-09-15</td>
+                            <td>Black wallet with ID card.</td>
+                            <td>
+                                <span class="status lost">
+                                    Lost
+                                </span>
+                            </td>
+                            <td>
+                                <button class="view-btn">
+                                    👁 View
+                                </button>
+
+                                <button class="delete-btn">
+                                    🗑 Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>LST-002</td>
+                            <td>Blue Water Bottle</td>
+                            <td>Canteen</td>
+                            <td>2026-09-14</td>
+                            <td>Blue bottle with school logo.</td>
+                            <td>
+                                <span class="status lost">
+                                    Lost
+                                </span>
+                            </td>
+                            <td>
+                                <button class="view-btn">
+                                    👁 View
+                                </button>
+
+                                <button class="delete-btn">
+                                    🗑 Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>LST-003</td>
+                            <td>White Earphones</td>
+                            <td>Classroom 101</td>
+                            <td>2026-09-12</td>
+                            <td>White earphones inside a small pouch.</td>
+                            <td>
+                                <span class="status lost">
+                                    Lost
+                                </span>
+                            </td>
+                            <td>
+                                <button class="view-btn">
+                                    👁 View
+                                </button>
+
+                                <button class="delete-btn">
+                                    🗑 Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p class="record-count">
+                Showing lost item reports
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        // SUBMIT LOST REPORT
+        document
+            .getElementById("lostItemForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const itemName =
+                    document.getElementById("itemName").value;
+
+                const locationLost =
+                    document.getElementById("locationLost").value;
+
+                const dateLost =
+                    document.getElementById("dateLost").value;
+
+                const description =
+                    document.getElementById("description").value;
+
+
+                if (
+                    itemName === "" ||
+                    locationLost === "" ||
+                    dateLost === "" ||
+                    description === ""
+                ) {
+                    alert("Please complete all required fields.");
+                    return;
+                }
+
+
+                document
+                    .getElementById("successMessage")
+                    .style.display = "block";
+
+
+                alert("Lost item report submitted successfully!");
+
+
+                document
+                    .getElementById("lostItemForm")
+                    .reset();
+
+
+                setTimeout(function() {
+
+                    document
+                        .getElementById("successMessage")
+                        .style.display = "none";
+
+                }, 3000);
+
+            });
+
+
+        // SEARCH LOST ITEMS
+        document
+            .getElementById("searchInput")
+            .addEventListener("keyup", function() {
+
+                const searchValue =
+                    this.value.toLowerCase();
+
+                const rows =
+                    document.querySelectorAll(
+                        "#lostItemsTableBody tr"
+                    );
+
+
+                rows.forEach(function(row) {
+
+                    const text =
+                        row.textContent.toLowerCase();
+
+                    if (text.includes(searchValue)) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+
+                });
+
+            });
+
+
+        // DELETE BUTTON
+        document.addEventListener("click", function(event) {
+
+            if (event.target.classList.contains("delete-btn")) {
+
+                const confirmDelete =
+                    confirm(
+                        "Are you sure you want to delete this lost report?"
+                    );
+
+                if (confirmDelete) {
+
+                    event.target
+                        .closest("tr")
+                        .remove();
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
